@@ -1,0 +1,47 @@
+body {
+	margin                : 0px;
+}
+h1 {
+	text-align            : center; 
+}
+h3 {
+	text-align            : center; 
+}
+.menu {
+	background-color      : #f1f1f1;
+}
+.link {
+	text-align            : center;
+}
+.link:hover {
+	text-decoration-line  : none;
+	text-decoration       : none;
+	background-color      : white;
+
+}
+#cont {
+	background-color      : #f1f1f1; 
+}
+#spot {
+	padding-top           : 20px; 
+}
+.btn-danger {
+	border-radius         : 3px !important; 
+}
+.danger {
+	border-color          : #dc3545 !important;
+	border-radius         : 3px !important; 
+}
+#ph {
+	text-align            : center;
+}
+#mess {
+	text-align            : center; 
+}
+#form {
+	position              : relative;
+	left                  : 30%;
+}
+.sair {
+	text-align            : center;
+}
