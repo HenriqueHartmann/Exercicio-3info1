@@ -12,6 +12,7 @@ try{
 if(self::$conexao == null){
 self::$conexao = new PDO("mysql:host=".self::HOST.";dbname=".self::NOMEBANCO, self::USUARIO, self::SENHA);
 self::$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+echo "deu certo";
 }
 return self::$conexao;
 }catch(PDOException $e){
@@ -20,4 +21,7 @@ die("Falhou a conexao ou ocorreu um erro banco: " . $e->getMessage());
 return $conexao;
 }
 }// class ends
+
+$con = new DBConnection();
+$con->getConexao();
 ?>

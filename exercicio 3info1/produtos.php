@@ -13,7 +13,12 @@
 	<div class="container-fluid">
 		<div id="cont" class="navbar-header">	
 			<ul class="nav nav-tabs">
-				<li class="col-md-2"><img alt="Brand" src="assets/images/logo3.png" width="65"></li>
+				<li class="col-md-1"><img alt="Brand" src="assets/images/logo3.png" width="65"></li>
+                <?php
+                if (isset($_SESSION['user'])) {
+                    require_once "include/adminM.php";
+                }
+                ?>
 				<a class="col-md-1 link" id="spot" href="index.php"><li>Home</li></a>
 				<?php
 					if (isset($_SESSION['user'])) {

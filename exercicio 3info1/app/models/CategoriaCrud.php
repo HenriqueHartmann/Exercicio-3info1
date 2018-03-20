@@ -17,20 +17,19 @@ class CategoriaCrud
     }
     public function getCategoria(int $id)
     {
-        $sql = 'SELECT * FROM categoria WHERE id_categoria ='.$id;
+        $sql = "SELECT * FROM categoria WHERE id_categoria =".$id;
         $resultado = $this->conexao->query($sql);
         //FETCH transforma o resultado em um array associativo
         $categoria = $resultado->fetch(PDO::FETCH_ASSOC);
-        //
-        $objcat = new Categoria($categoria['id_categoria'], $categoria['nome_categoria'], $categoria['descricao']);
+        $objcat = new Categoria($categoria['id_categoria'], $categoria['nome_categoria'], $categoria['descricao_categoria']);
         var_dump($objcat);
         return $objcat;
     }
     public function getCategorias()
     {
-        $sql = 'SELECT * FROM categoria';
+        $sql = "SELECT * FROM categoria";
         $resultado = $this->conexao->query($sql);
-        $categorias = $resultado->fetchall($resultado);
+        $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
         foreach ($categorias as $categoria) {
             $id = $categoria['id_categoria'];
             $nome = $categoria['nome_categoria'];
@@ -39,5 +38,27 @@ class CategoriaCrud
             $listaCategorias[] = $obj;
         }
         return $listaCategorias;
+    }
+    public function InsertCategoria(Categoria $cat)
+    {
+        $sql = "INSERT INTO categoria (nome_categoria, descricao_categoria) VALUES ('".$cat->getNome()."','".$cat->getDescricao()."')";
+        try{
+            $this->conexao->exec($sql);
+        }catch (PDOException $e){
+            return $e->getMessage();
+        }
+    }
+    public function UpdateCategoria(Categoria $cat)
+    {
+        $sql = "UPDATE categoria SET (nome_categoria = '".$cat->getNome()."', descricao_categoria ='".$cat->getDescricao()."') WHERE id_categoria=".$cat->getId().")";
+        try{
+            $this->conexao->exec($sql);
+        }catch (PDOException $e){
+            return $e->getMessage();
+        }
+    }
+    public function DeleteCategoria()
+    {
+
     }
 }

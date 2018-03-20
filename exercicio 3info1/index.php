@@ -14,12 +14,24 @@
 	<div class="container-fluid">
 		<div class="row menu">	
 			<ul class="nav nav-tabs container-fluid">
-				<li class="col-md-3 col-lg-3"><img alt="Brand" src="assets/images/logo3.png" width="65"></li>
+				<li class="col-md-2 col-lg-2"><img alt="Brand" src="assets/images/logo3.png" width="65"></li>
+
+                <?php
+                    if (isset($_SESSION['user'])) {
+                        require_once "include/adminM.php";
+                    }else{
+                        require_once "include/brancoM.php";
+                }
+
+                ?>
 				<?php
 					if (isset($_SESSION['user'])) {
 						require_once "include/perfilM.php";
-					}
+					}else{
+					    require_once "include/brancoM.php";
+                    }
 				?>
+
 				<a class="col-md-1 col-lg-1 link" id="spot" href="produtos.php?acao=Móveis"><li>Móveis</li></a>
 				<a class="col-md-1 col-lg-1 link" id="spot" href="produtos.php?acao=Eletro"><li>Eletro</li></a>
 				<a class="col-md-1 col-lg-1 link" id="spot" href="produtos.php?acao=Roupas"><li>Roupas</li></a>

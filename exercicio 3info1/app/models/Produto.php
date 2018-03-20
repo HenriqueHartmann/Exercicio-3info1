@@ -25,13 +25,13 @@ class Produto
 
 	//Fazer arquivo de testes da classe
 
-	public function __Construct($id, $nome, $descricao, $foto, $preco, $id_categoria){
-		$this->id = id;
-		$this->nome = nome;
-		$this->descricao = descricao;
-		$this->foto = foto;
-		$this->preco = preco;
-		$this->id_categoria = id_categoria;
+	public function __Construct( $nome, $descricao, $foto, $preco, $id_categoria, $id = null){
+		$this->id = $id;
+		$this->nome = $nome;
+		$this->descricao = $descricao;
+		$this->foto = $foto;
+		$this->preco = $preco;
+		$this->id_categoria = $id_categoria;
 	}
 
     public function getId()

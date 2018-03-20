@@ -1,0 +1,1 @@
+<a class="col-md-1 col-lg-1 link" id="spot" href=""><li></li></a>

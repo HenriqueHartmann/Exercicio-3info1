@@ -16,11 +16,11 @@ class Categoria
     private $descricao;
 
 
-    public function __construct($id, $nome, $descricao)
+    public function __construct( $nome, $descricao, $id = null)
     {
-        $this->id = id;
-        $this->nome = nome;
-        $this->descricao = descricao;
+        $this->id = $id;
+        $this->nome = $nome;
+        $this->descricao = $descricao;
     }
 
     public function getId()
