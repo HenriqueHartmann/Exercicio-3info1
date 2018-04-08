@@ -33,7 +33,7 @@ class CategoriaCrud
         foreach ($categorias as $categoria) {
             $id = $categoria['id_categoria'];
             $nome = $categoria['nome_categoria'];
-            $descricao = $categoria['descricao'];
+            $descricao = $categoria['descricao_categoria'];
             $obj = new Categoria($id, $nome, $descricao);
             $listaCategorias[] = $obj;
         }
@@ -41,24 +41,34 @@ class CategoriaCrud
     }
     public function InsertCategoria(Categoria $cat)
     {
-        $sql = "INSERT INTO categoria (nome_categoria, descricao_categoria) VALUES ('".$cat->getNome()."','".$cat->getDescricao()."')";
+        $this->conexao = DBConnection::getConexao();
+
+        $sql = "INSERT INTO categoria (nome_categoria, descricao_categoria) VALUES ('{$cat->getNome()}','{$cat->getDescricao()}')";
         try{
             $this->conexao->exec($sql);
+            header('location: ../controllers/categoria.php');
         }catch (PDOException $e){
             return $e->getMessage();
         }
     }
     public function UpdateCategoria(Categoria $cat)
     {
-        $sql = "UPDATE categoria SET (nome_categoria = '".$cat->getNome()."', descricao_categoria ='".$cat->getDescricao()."') WHERE id_categoria=".$cat->getId().")";
+        $sql = "UPDATE categoria SET nome_categoria = '{$cat->getNome()}', descricao_categoria ='{$cat->getDescricao()}' WHERE id_categoria=".$cat->getId();
         try{
             $this->conexao->exec($sql);
+            header('location: ../controllers/categoria.php');
         }catch (PDOException $e){
             return $e->getMessage();
         }
     }
-    public function DeleteCategoria()
+    public function DeleteCategoria(int $codigo)
     {
-
+        $sql = "DELETE FROM categoria WHERE id_categoria=".$codigo;
+        try{
+            $this->conexao->exec($sql);
+            header('location: ../controllers/categoria.php');
+        }catch (PDOException $e){
+            return $e->getMessage();
+        }
     }
 }
