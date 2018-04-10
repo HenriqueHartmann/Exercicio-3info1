@@ -46,4 +46,21 @@ class ProdutoCrud
         return $listaProdutos;
     }
 
+    public function getProdutoscat($codigo) {
+        $sql = 'SELECT * FROM produto WHERE id_categoria ='.$codigo;
+        $resultado = $this->conexao->query($sql);
+        $produtos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($produtos as $produto) {
+            $id = $produto['id_produto'];
+            $nome = $produto['nome_produto'];
+            $descricao = $produto['descricao_produto'];
+            $foto = $produto['foto_produto'];
+            $preco = $produto['preco_produto'];
+            $idCategoria = $produto['id_categoria'];
+            $obj = new Produto($id, $nome, $descricao, $foto, $preco, $idCategoria);
+            $listaProdutos[] = $obj;
+        }
+        return $listaProdutos;
+    }
+
 }

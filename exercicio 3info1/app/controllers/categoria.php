@@ -8,6 +8,7 @@
  */
 
 require_once '../models/CategoriaCrud.php';
+require_once '../models/ProdutoCrud.php';
 
 if (isset($_GET['action'])){
     $action = $_GET['action'];
@@ -21,6 +22,14 @@ switch ($action){
             $categorias = $crud->getCategorias();
             require_once '../view/template/cabecalho.php';
             require_once '../view/categoria/index.php';
+            require_once '../view/template/rodape.php';
+        break;
+    case 'show':
+            $codigo = $_GET['codigo'];
+            $crud = new ProdutoCrud();
+            $produtos = $crud->getProdutoscat($codigo);
+            require_once '../view/template/cabecalho.php';
+            require_once '../view/produto/index.php';
             require_once '../view/template/rodape.php';
         break;
 }
