@@ -24,6 +24,14 @@ switch ($action){
             require_once '../view/categoria/index.php';
             require_once '../view/template/rodape.php';
         break;
+    case 'editcat':
+            $codigo = $_GET['codigo'];
+            $crud = new CategoriaCrud();
+            $categorias = $crud->getCategoria($codigo);
+            include_once '../view/template/cabecalho.php';
+            include_once 'editar-categoria.php';
+            include_once '../view/template/rodape.php';
+        break;
     case 'show':
             $codigo = $_GET['codigo'];
             $crud = new ProdutoCrud();
@@ -32,6 +40,29 @@ switch ($action){
             require_once '../view/produto/index.php';
             require_once '../view/template/rodape.php';
         break;
+    case 'prod':
+            $crud = new ProdutoCrud();
+            $produtos = $crud->getProdutos();
+            require_once '../view/template/cabecalho.php';
+            require_once '../view/produto/index.php';
+            require_once '../view/template/rodape.php';
+    case 'showprod':
+            $codigo = $_GET['codigo'];
+            $crud = new ProdutoCrud();
+            $produtos = $crud->getProduto($codigo);
+            include_once '../view/template/cabecalho.php';
+            include_once '../view/produto/show.php';
+            include_once '../view/template/rodape.php';
+        break;
+    case 'editprod':
+            $codigo = $_GET['codigo'];
+            $crud = new ProdutoCrud();
+            $produtos = $crud->getProduto($codigo);
+            include_once '../view/template/cabecalho.php';
+            include_once 'editar-produto.php';
+            include_once '../view/template/rodape.php';
+        break;
+
 }
 ?>
 

@@ -11,6 +11,8 @@ require_once "../view/template/cabecalho.php";
 $codigo = $_GET['codigo'];
 echo " esse é o id: $codigo\n";
 ?>
+</ul>
+</div>
 <br>
 <br>
 <div class="row">
@@ -23,14 +25,14 @@ echo " esse é o id: $codigo\n";
         <div class="control-group">
             <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="categoria">Categoria:</label>
             <div class="control">
-            <input id="categoria" maxlength="60" name="titulo" type="text" class="form-control input-large" value="<?=$_GET['nome'];?>">
+            <input id="categoria" maxlength="60" name="titulo" type="text" class="form-control input-large" value="<?=$categorias->getNome();?>">
             </div>
         </div>
 
     <div class="control-group">
         <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="descricao">Descrição</label>
         <div class="control">
-        <input id="descricao" maxlength="255" name="descricao" type="text" class="form-control input-large" value="<?=$_GET['descricao'];?>">
+        <input id="descricao" maxlength="255" name="descricao" type="text" class="form-control input-large" value="<?=$categorias->getDescricao();?>">
         </div>
     </div>
     <br>

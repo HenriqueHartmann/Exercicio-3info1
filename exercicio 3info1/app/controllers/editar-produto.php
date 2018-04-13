@@ -1,38 +1,36 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Henrique Hartmann
- * Date: 08/04/2018
- * Time: 13:09
- */
-error_reporting(0);
-require_once "../view/template/cabecalho.php";
 
-$codigo = $_GET['codigo'];
-echo " esse é o id: $codigo\n";
-?>
+</ul>
+</div>
     <br>
     <br>
     <div class="row">
         <div class="span12" style="text-align: center; margin: 0 auto;">
-            <form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="controleAcao.php?action=editar&codigo=<?=$codigo; ?>">
+            <form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="controleAcao.php?action=editar&codigo=<?= $produtos->getId(); ?>">
                 <fieldset>
-                    <legend>Editar Categoria</legend>
+                    <legend>Editar Produto</legend>
 
 
                     <div class="control-group">
-                        <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="categoria">Categoria:</label>
+                        <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="categoria">Produto:</label>
                         <div class="control">
-                            <input id="categoria" maxlength="60" name="titulo" type="text" class="form-control input-large" value="<?=$_GET['nome'];?>">
+                            <input id="produto" maxlength="60" name="titulo" type="text" class="form-control input-large" value="<?= $produtos->getNome();?>">
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="descricao">Descrição</label>
                         <div class="control">
-                            <input id="descricao" maxlength="255" name="descricao" type="text" class="form-control input-large" value="<?=$_GET['descricao'];?>">
+                            <input id="descricao" maxlength="255" name="descricao" type="text" class="form-control input-large" value="<?=$produtos->getDescricao();?>">
                         </div>
                     </div>
+
+                    <div class="control-group">
+                        <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="preco">Preço</label>
+                        <div class="control">
+                            <input id="preco" maxlength="255" name="preco" type="number" class="form-control input-large" value="<?=$produtos->getPreco();?>">
+                        </div>
+                    </div>
+
                     <br>
                     <div class="control-group">
                         <div class="control">
@@ -47,4 +45,3 @@ echo " esse é o id: $codigo\n";
     <br>
     <br>
     <br>
-<?php require_once "../view/template/rodape.php"?>

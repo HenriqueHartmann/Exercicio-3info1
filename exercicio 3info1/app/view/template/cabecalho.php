@@ -24,8 +24,6 @@ session_start();
         <ul class="nav nav-tabs container-fluid">
             <li class="btn btn-dark col-xs-12 col-sm-3 col-md-3 col-lg-3"><img alt="Brand" src="../../assets/images/logo4.png" width="65"></li>
             <a class="col-xs-12 col-sm-2 col-md-2 col-lg-2 link" id="spot" href="../../index.php"><li>index</li></a>
-            <a class="col-xs-12 col-sm-2 col-md-2 col-lg-2 link" id="spot" href="categoria.php"><li>Admin</li></a>
-            <a class="col-xs- col-sm-2 col-md-2 col-lg-2 link" id="spot" href="cadastrar-categoria.php"><li>Cadastrar Categoria</li></a>
-            <a class="col-xs- col-sm-2 col-md-2 col-lg-2 link" id="spot" href="cadastrar-produto.php"><li>Cadastrar Produto</li></a>
-        </ul>
-    </div>
+            <a class="col-xs- col-sm-2 col-md-2 col-lg-2 link" id="spot" href="categoria.php?action=index"><li>Categorias</li></a>
+            <a class="col-xs- col-sm-2 col-md-2 col-lg-2 link" id="spot" href="categoria.php?action=prod"><li>Produtos</li></a>
+

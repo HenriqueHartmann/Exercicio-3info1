@@ -24,7 +24,6 @@ class ProdutoCrud
         $resultado = $this->conexao->query($sql);
         $produto = $resultado->fetch(PDO::FETCH_ASSOC);
         $objpro = new Produto($produto['id_produto'], $produto['nome_produto'], $produto['descricao_produto'], $produto['foto_produto'], $produto['preco_produto'], $produto['id_categoria']);
-        var_dump($objpro);
         return $objpro;
     }
 
