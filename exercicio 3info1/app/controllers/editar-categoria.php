@@ -17,7 +17,7 @@ echo " esse é o id: $codigo\n";
 <br>
 <div class="row">
     <div class="span12" style="text-align: center; margin: 0 auto;">
-<form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="controleAcao.php?action=editar&codigo=<?=$codigo; ?>">
+<form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="controleAcao.php?action=editarcat&codigo=<?=$codigo; ?>">
         <fieldset>
         <legend>Editar Categoria</legend>
 

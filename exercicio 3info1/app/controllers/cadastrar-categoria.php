@@ -10,11 +10,13 @@ require_once "../view/template/cabecalho.php";
 
 
 ?>
+</ul>
+</div>
     <br>
     <br>
     <div class="row">
         <div class="span12" style="text-align: center; margin: 0 auto;">
-            <form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="controleAcao.php?action=cadastrar">
+            <form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="controleAcao.php?action=cadastrarcat">
                 <fieldset>
                     <legend>Cadastrar Categoria</legend>
 

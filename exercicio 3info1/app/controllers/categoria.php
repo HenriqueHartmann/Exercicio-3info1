@@ -46,6 +46,7 @@ switch ($action){
             require_once '../view/template/cabecalho.php';
             require_once '../view/produto/index.php';
             require_once '../view/template/rodape.php';
+        break;
     case 'showprod':
             $codigo = $_GET['codigo'];
             $crud = new ProdutoCrud();
