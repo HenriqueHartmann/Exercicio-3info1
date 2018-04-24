@@ -1,11 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Henrique Hartmann
+ * Date: 08/04/2018
+ * Time: 13:10
+ */
 error_reporting(0);
 require_once "../view/template/cabecalho.php";
 
 
 ?>
-    </ul>
-    </div>
+</ul>
+</div>
     <br>
     <br>
     <div class="row">
@@ -18,28 +24,28 @@ require_once "../view/template/cabecalho.php";
                     <div class="control-group">
                         <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="produto">Produto:</label>
                         <div class="control">
-                            <input id=produto maxlength="60" name="titulo" type="text" class="form-control input-large">
+                            <input maxlength="60" name="titulo" type="text" class="form-control input-large">
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="descricao">Descrição</label>
                         <div class="control">
-                            <input id="descricao" maxlength="255" name="descricao" type="text" class="form-control input-large">
+                            <input maxlength="255" name="descricao" type="text" class="form-control input-large">
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="preco">Preco:</label>
                         <div class="control">
-                            <input id=preco maxlength="60" name="preco" type="text" class="form-control input-large">
+                            <input maxlength="60" name="preco" type="number" class="form-control input-large">
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="id_categoria">Id_Categoria:</label>
                         <div class="control">
-                            <input id=id_categoria maxlength="60" name="idcat" type="text" class="form-control input-large">
+                            <input maxlength="60" name="idcat" type="number" class="form-control input-large">
                         </div>
                     </div>
                     <br>
@@ -48,7 +54,6 @@ require_once "../view/template/cabecalho.php";
                             <input type="submit" name="editar" id="singlebutton" class="btn btn-primary" value="Salvar">
                         </div>
                     </div>
-
             </form>
         </div>
     </div>

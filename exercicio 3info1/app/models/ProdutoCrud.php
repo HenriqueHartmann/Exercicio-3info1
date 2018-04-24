@@ -68,18 +68,24 @@ class ProdutoCrud
         $this->conexao = DBConnection::getConexao();
 
         $sql = "INSERT INTO produto (nome_produto, descricao_produto, preco_produto, id_categoria)   VALUES ('{$prod->getNome()}', '{$prod->getDescricao()}', '{$prod->getPreco()}', '{$prod->getIdCategoria()}')";
-
         try {
             $this->conexao->exec($sql);
             header('location: categoria.php?action=prod');
         } catch (PDOException $e) {
+            echo $e->getMessage();
             return $e->getMessage();
         }
     }
 
-    public function updateProduto()
+    public function updateProduto(Produto $prod)
     {
-
+        $sql = "UPDATE produto SET nome_produto ='{$prod->getNome()}', descricao_produto ='{$prod->getDescricao()}', preco_produto ='{$prod->getPreco()}', id_categoria ='{$prod->getIdCategoria()}' WHERE id_produto=".$prod->getId();
+        try{
+            $this->conexao->exec($sql);
+            header('location: categoria.php?action=prod');
+        }catch (PDOException $e){
+            return $e->getMessage();
+        }
     }
 
     public function deleteProduto($codigo)
@@ -87,7 +93,7 @@ class ProdutoCrud
         $sql = "DELETE FROM produto WHERE id_produto=".$codigo;
         try{
             $this->conexao->exec($sql);
-            header('location: ../controllers/categoria.php?action=prod');
+            header('location: categoria.php?action=prod');
         }catch (PDOException $e){
             return $e->getMessage();
         }

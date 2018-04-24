@@ -19,7 +19,7 @@
             <td><a href="categoria.php?action=showprod&codigo=<?= $produto->getId();?>"><?=$produto->getNome();?></a</td>
             <td><?=$produto->getDescricao() ?></td>
             <td>R$ <?=$produto->getPreco() ?></td>
-            <td><a href="categoria.php?action=editprod&codigo=<?=$produto->getId();?>">Editar</a> | <a href="controleAcao.php?action=excluirp&codigo=<?=$produto->getId();?>">Excluir</a></td>
+            <td><a href="categoria.php?action=editprod&codigo=<?=$produto->getId();?>">Editar</a> | <a href="controleAcao.php?action=excluirprod&codigo=<?=$produto->getId();?>">Excluir</a></td>
         </tr>
     <?php endforeach ?>
     </tbody>

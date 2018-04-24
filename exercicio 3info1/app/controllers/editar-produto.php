@@ -31,6 +31,12 @@
                         </div>
                     </div>
 
+                    <div class="control-group">
+                        <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="id_categoria">Id_Categoria:</label>
+                        <div class="control">
+                            <input maxlength="60" name="idcat" type="number" class="form-control input-large">
+                        </div>
+                    </div>
                     <br>
                     <div class="control-group">
                         <div class="control">

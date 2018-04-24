@@ -71,17 +71,21 @@ require_once '../models/ProdutoCrud.php';
     }
     elseif (isset($_GET['action']) and $_GET['action'] == 'cadastrarprod')
     {
-        $prod = new Produto(null, $_POST['titulo'], $_POST['descricao'], '', $_POST['preco'], $_POST['idcat']);
+        echo 'aqui';
+        $prod = new Produto('', $_POST['titulo'], $_POST['descricao'], '', $_POST['preco'], $_POST['idcat']);
 
         $prodcrud = new ProdutoCrud();
 
         $prodcrud->insertProduto($prod);
 
         echo "loading page ...";
-
     }
 
-    elseif (isset($_GET['action']) and $_GET['action'] == 'excluirprod' and isset($_GET['codigo']))
+   elseif (isset($_GET['action']) and $_GET['action'] == 'excluirprod' and isset($_GET['codigo']))
     {
+        $codigo = $_GET['codigo'];
 
+        $prodcrud = new ProdutoCrud();
+
+        $prodcrud->deleteProduto($codigo);
     }
