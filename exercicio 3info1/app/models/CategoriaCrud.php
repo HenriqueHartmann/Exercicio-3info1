@@ -46,7 +46,6 @@ class CategoriaCrud
         $sql = "INSERT INTO categoria (nome_categoria, descricao_categoria) VALUES ('{$cat->getNome()}','{$cat->getDescricao()}')";
         try{
             $this->conexao->exec($sql);
-            header('location: ../controllers/categoria.php');
         }catch (PDOException $e){
             return $e->getMessage();
         }
@@ -66,7 +65,6 @@ class CategoriaCrud
         $sql = "DELETE FROM categoria WHERE id_categoria=".$codigo;
         try{
             $this->conexao->exec($sql);
-            header('location: ../controllers/categoria.php');
         }catch (PDOException $e){
             return $e->getMessage();
         }
