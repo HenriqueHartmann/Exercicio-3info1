@@ -107,6 +107,13 @@ switch ($action){
         include_once '../view/produto/editar-produto.php';
         include_once '../view/template/rodape.php';
     break;
+    case 'editarprod':
+        $codigo = $_GET['codigo'];
+        $prod = new Produto( $codigo ,$_POST['titulo'], $_POST['descricao'],'?', $_POST['preco'], $_POST['idcat']);
+        $prodcrud = new ProdutoCrud();
+        $resultado = $prodcrud->updateProduto($prod);
+        echo $resultado;
+    break;
     case 'excluirprod':
         $codigo = $_GET['codigo'];
         $prodcrud = new ProdutoCrud();

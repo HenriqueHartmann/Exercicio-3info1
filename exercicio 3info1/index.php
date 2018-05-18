@@ -14,7 +14,7 @@
 	<div class="container-fluid">
 		<div class="row menu">	
 			<ul class="nav nav-tabs container-fluid">
-				<li class="col-md-1 col-lg-1"><img alt="Brand" src="assets/images/logo4.png" width="65"></li>
+                <a href="app/view/principal/index.php"><li class="col-md-1 col-lg-1"><img alt="Brand" src="assets/images/logo4.png" width="65"></li></a>
                 <li class="col-md-3 col-lg-3">
                     <form id="spot2" method="post" action="produtos.php">
                         <input class="btn btn-sm danger" type="search" name="busca">

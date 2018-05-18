@@ -5,7 +5,7 @@
     <br>
     <div class="row">
         <div class="span12" style="text-align: center; margin: 0 auto;">
-            <form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="../../controllers/controleAcao.php?action=editarprod&codigo=<?= $produtos->getId(); ?>">
+            <form class="form-horizontal form-control" style="width: 400px; margin: 0 auto;" method="post" action="categoria.php?action=editarprod&codigo=<?= $produtos->getId(); ?>">
                 <fieldset>
                     <legend>Editar Produto</legend>
 
@@ -34,7 +34,7 @@
                     <div class="control-group">
                         <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4 control-label" for="id_categoria">Id_Categoria:</label>
                         <div class="control">
-                            <input maxlength="60" name="idcat" type="number" class="form-control input-large">
+                            <input maxlength="60" name="idcat" type="number" class="form-control input-large" value="<?=$produtos->getIdCategoria();?>">
                         </div>
                     </div>
                     <br>
