@@ -1,6 +1,6 @@
 #abas ul li{
     display: inline;
-    border: solid 2px red;
+    border: solid 2px #259BF8;
     padding: 10px;
     border-radius: 10px 10px 0 0;
 }
@@ -9,6 +9,6 @@
     border: solid 2px green;
 }
 .selecionado {
-    background-color: #856404;
-    box-shadow: 5px 5px 5px crimson;
+    background-color: #25E8F8;
+    box-shadow: 5px 5px 5px gray;
 }

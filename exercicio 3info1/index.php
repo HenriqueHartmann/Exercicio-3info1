@@ -25,13 +25,6 @@
                     if (isset($_SESSION['user'])) {
                         require_once "include/adminM.php";
                         require_once "include/logout.php";
-                    }else{
-                        require_once "include/brancoM.php";
-                }
-
-                ?>
-				<?php
-					if (isset($_SESSION['user'])) {
 						require_once "include/perfilM.php";
 					}else{
 					    require_once "include/brancoM.php";
